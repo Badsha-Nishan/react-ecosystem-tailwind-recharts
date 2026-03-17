@@ -1,14 +1,67 @@
 import React from "react";
+import Link from "./Link";
+import { Menu, X } from "lucide-react";
+
+export const navbarItems = [
+  {
+    id: "nav-001",
+    label: "Home",
+    path: "/",
+  },
+  {
+    id: "nav-002",
+    label: "About",
+    path: "/about",
+  },
+  {
+    id: "nav-003",
+    label: "Services",
+    path: "/services",
+    children: [
+      {
+        id: "nav-003-1",
+        label: "Web Development",
+        path: "/services/web",
+      },
+      {
+        id: "nav-003-2",
+        label: "App Development",
+        path: "/services/app",
+      },
+    ],
+  },
+  {
+    id: "nav-004",
+    label: "Blog",
+    path: "/blog",
+  },
+  {
+    id: "nav-005",
+    label: "Contact",
+    path: "/contact",
+  },
+];
 
 const NavBar = () => {
   return (
     <nav className="w-11/12 mx-auto mt-4 flex justify-between items-center">
+      <span className="md:hidden">
+        <Menu></Menu>
+        <X></X>
+      </span>
       <button className="max-w-10">
         <a href="/">
           <img src="../../public/icon.png" alt="Icon" />
         </a>
       </button>
-      <ul className="flex gap-6">
+      <ul className="flex gap-5">
+        {navbarItems.map((route) => (
+          <Link key={route.id} route={route}></Link>
+        ))}
+      </ul>
+
+      {/* MY IMPLEMENTS */}
+      {/* <ul className="flex gap-6">
         <li>
           <a href="/">Home</a>
         </li>
@@ -18,7 +71,7 @@ const NavBar = () => {
         <li>
           <a href="/about">About</a>
         </li>
-      </ul>
+      </ul> */}
       <button className="btn btn-primary">Log In</button>
     </nav>
   );
