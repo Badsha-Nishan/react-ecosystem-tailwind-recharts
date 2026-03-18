@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "./Link";
 import { Menu, X } from "lucide-react";
 
@@ -43,12 +43,15 @@ export const navbarItems = [
 ];
 
 const NavBar = () => {
+  const [open, setOpen] = useState(false);
+  const handleToggle = () => {
+    setOpen(!open);
+  };
   return (
     <nav className="w-11/12 mx-auto mt-4 flex justify-between items-center">
-      <span className="md:hidden">
-        <Menu></Menu>
-        <X></X>
-      </span>
+      <button onClick={handleToggle} className="md:hidden">
+        {open ? <X></X> : <Menu></Menu>}
+      </button>
       <button className="max-w-10">
         <a href="/">
           <img src="../../public/icon.png" alt="Icon" />
