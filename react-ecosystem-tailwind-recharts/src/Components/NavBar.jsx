@@ -67,7 +67,7 @@ const NavBar = () => {
             <img src="../../public/icon.png" alt="Icon" />
           </a>
         </button>
-        <ul className="flex gap-5">
+        <ul className="md:flex gap-5 hidden">
           {navbarItems.map((route) => (
             <Link key={route.id} route={route}></Link>
           ))}

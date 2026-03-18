@@ -1,0 +1,53 @@
+{
+  "pricingPlans": [
+    {
+      "id": 1,
+      "name": "Basic",
+      "price": "$20/month",
+      "features": [
+        "Access to gym equipment",
+        "Locker room & shower access",
+        "1 fitness assessment",
+        "Basic workout plan",
+        "Free Wi-Fi",
+        "Water station access",
+        "Mobile app access",
+        "Standard support"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Standard",
+      "price": "$40/month",
+      "features": [
+        "All Basic features",
+        "Unlimited group classes (Yoga, Zumba, HIIT)",
+        "2 personal training sessions/month",
+        "Diet & nutrition consultation",
+        "Body composition analysis",
+        "Progress tracking",
+        "Guest pass (2 per month)",
+        "Priority support"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Premium",
+      "price": "$70/month",
+      "features": [
+        "All Standard features",
+        "Unlimited personal training",
+        "Custom workout & diet plan",
+        "Advanced fitness tracking",
+        "Spa, sauna & steam room access",
+        "24/7 gym access",
+        "Massage & recovery sessions",
+        "Supplement discounts",
+        "VIP locker & towel service",
+        "Dedicated fitness coach",
+        "Priority booking for classes",
+        "VIP support"
+      ]
+    }
+  ]
+}
