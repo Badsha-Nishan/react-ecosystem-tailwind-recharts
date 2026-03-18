@@ -48,23 +48,33 @@ const NavBar = () => {
     setOpen(!open);
   };
   return (
-    <nav className="w-11/12 mx-auto mt-4 flex justify-between items-center">
-      <button onClick={handleToggle} className="md:hidden">
+    <nav className="w-11/12 mx-auto mt-4">
+      <button onClick={handleToggle} className="md:hidden absolute top-6">
         {open ? <X></X> : <Menu></Menu>}
+        <ul
+          className={`flex flex-col gap-2 bg-amber-400 p-3 rounded absolute transition-all duration-500 ${
+            !open ? "-top-80 opacity-0" : "top-9 opacity-100"
+          }`}
+        >
+          {navbarItems.map((route) => (
+            <Link key={route.id} route={route}></Link>
+          ))}
+        </ul>
       </button>
-      <button className="max-w-10">
-        <a href="/">
-          <img src="../../public/icon.png" alt="Icon" />
-        </a>
-      </button>
-      <ul className="flex gap-5">
-        {navbarItems.map((route) => (
-          <Link key={route.id} route={route}></Link>
-        ))}
-      </ul>
+      <div className="flex justify-around items-center">
+        <button className="max-w-10">
+          <a href="/">
+            <img src="../../public/icon.png" alt="Icon" />
+          </a>
+        </button>
+        <ul className="flex gap-5">
+          {navbarItems.map((route) => (
+            <Link key={route.id} route={route}></Link>
+          ))}
+        </ul>
 
-      {/* MY IMPLEMENTS */}
-      {/* <ul className="flex gap-6">
+        {/* MY IMPLEMENTS */}
+        {/* <ul className="flex gap-6">
         <li>
           <a href="/">Home</a>
         </li>
@@ -75,7 +85,8 @@ const NavBar = () => {
           <a href="/about">About</a>
         </li>
       </ul> */}
-      <button className="btn btn-primary">Log In</button>
+        <button className="btn btn-primary">Log In</button>
+      </div>
     </nav>
   );
 };
